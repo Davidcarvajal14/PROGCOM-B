@@ -1,0 +1,89 @@
+Profe te envio el codigo asi por que no pude enviarte la carpeta desde mi pc.
+package Floristería;
+
+public class FloristeriaDavid extends Casa {
+
+    private boolean tieneFlorDecorativa;
+    private boolean tieneRiachuelo;
+    private boolean tieneNube;
+    private boolean tieneTechoConTejas;
+
+    /**
+     * Constructor de la clase Floristería David
+     * @param color color de las paredes (rosado claro)
+     * @param numHabitaciones número de habitaciones
+     * @param numBanos número de baños
+     * @param tienePatio si tiene patio
+     * @param tieneParqueadero si tiene parqueadero
+     * @param tieneFlorDecorativa si tiene flor decorativa en la fachada
+     * @param tieneRiachuelo si tiene riachuelo en la parte trasera
+     * @param tieneNube si hay nube decorativa en el cielo
+     * @param tieneTechoConTejas si el techo tiene líneas de tejas
+     */
+    public FloristeriaDavid(String color, int numHabitaciones, int numBanos,
+                            boolean tienePatio, boolean tieneParqueadero,
+                            boolean tieneFlorDecorativa, boolean tieneRiachuelo,
+                            boolean tieneNube, boolean tieneTechoConTejas) {
+
+        super(color, numHabitaciones, numBanos, tienePatio, tieneParqueadero);
+        this.tieneFlorDecorativa = tieneFlorDecorativa;
+        this.tieneRiachuelo = tieneRiachuelo;
+        this.tieneNube = tieneNube;
+        this.tieneTechoConTejas = tieneTechoConTejas;
+    }
+
+    @Override
+    public String describir() {
+        String descripcion = super.describir();
+        descripcion += "\nEsta es la Floristería David, vista desde cinco perspectivas:";
+
+        descripcion += "\n\n🔸 Vista Frontal:\n- Paredes de color rosado claro con techo triangular café." +
+                "\n- Puerta rectangular de color marrón en el centro.";
+        if (tieneFlorDecorativa) {
+            descripcion += "\n- Cinco flores decorativas en la fachada (roja, azul, púrpura, naranja y rosa).";
+        }
+
+        descripcion += "\n\n🔸 Vista Trasera:\n- Sin elementos visibles en la imagen, pero puede incluir decoraciones adicionales.";
+        if (tieneRiachuelo) {
+            descripcion += "\n- Riachuelo azul claro serpenteando desde la base.";
+        }
+        if (tieneNube) {
+            descripcion += "\n- Nube gris compuesta por varios círculos flotando en el cielo.";
+        }
+
+        descripcion += "\n\n🔸 Vista Lateral Izquierda:\n- Muro sin decoraciones visibles.";
+
+        descripcion += "\n\n🔸 Vista Lateral Derecha:\n- Muro similar al izquierdo.";
+
+        descripcion += "\n\n🔸 Vista Superior:\n- Techo triangular café.";
+        if (tieneTechoConTejas) {
+            descripcion += "\n- Líneas grises verticales que simulan tejas.";
+        }
+
+        return descripcion;
+    }
+}
+
+package Floristería;
+
+public class Ejecución_Floristería_David {
+
+    public static void main(String[] args) {
+
+        // TODO Auto-generated method stub
+
+        FloristeriaDavid davidCasa = new FloristeriaDavid(
+            "Rosado claro", 3, 1, true, false,
+            true, false, false, false
+        );
+
+        System.out.println(davidCasa.describir());
+
+        davidCasa.pintar("Le agrego el cartel DAVID 🌸");
+
+        System.out.println(davidCasa.describir());
+    }
+}
+
+
+
